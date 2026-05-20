@@ -1,6 +1,3 @@
-# Dataset configuration untuk Fuseki
-# File ini otomatis dibaca Fuseki saat startup
-
 @prefix :      <#> .
 @prefix fuseki: <http://jena.apache.org/fuseki#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
