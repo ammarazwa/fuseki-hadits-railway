@@ -1,0 +1,27 @@
+# Dataset configuration untuk Fuseki
+# File ini otomatis dibaca Fuseki saat startup
+
+@prefix :      <#> .
+@prefix fuseki: <http://jena.apache.org/fuseki#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tdb2:  <http://jena.apache.org/2016/tdb#> .
+@prefix ja:    <http://jena.hpl.hp.com/2005/11/Assembler#> .
+
+:service_dataset_hadits a fuseki:Service ;
+    fuseki:name         "dataset_hadits" ;
+    fuseki:endpoint     [ fuseki:operation fuseki:query ; fuseki:name "query" ] ;
+    fuseki:endpoint     [ fuseki:operation fuseki:query ; fuseki:name "sparql" ] ;
+    fuseki:endpoint     [ fuseki:operation fuseki:update ; fuseki:name "update" ] ;
+    fuseki:endpoint     [ fuseki:operation fuseki:gsp-r ; fuseki:name "get" ] ;
+    fuseki:endpoint     [ fuseki:operation fuseki:gsp-rw ; fuseki:name "data" ] ;
+    fuseki:endpoint     [ fuseki:operation fuseki:query ] ;
+    fuseki:endpoint     [ fuseki:operation fuseki:update ] ;
+    fuseki:endpoint     [ fuseki:operation fuseki:gsp-r ] ;
+    fuseki:endpoint     [ fuseki:operation fuseki:gsp-rw ] ;
+    fuseki:dataset      :dataset_hadits_tdb ;
+    .
+
+:dataset_hadits_tdb a tdb2:DatasetTDB2 ;
+    tdb2:location "/fuseki/databases/dataset_hadits" ;
+    .

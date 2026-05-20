@@ -1,0 +1,10 @@
+# Jangan push database TDB2
+databases/
+*.db
+
+# Environment files
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
